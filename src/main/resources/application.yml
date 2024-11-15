@@ -26,4 +26,6 @@ spring:
             token-uri: ${sfq.salesforce.host}/services/oauth2/token
 server:
   port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /sf-quote
 

@@ -21,10 +21,10 @@ public class SfIntegrationApplication {
     @PostConstruct
     public void init() {
         String clientId = env.getRequiredProperty("spring.security.oauth2.client.registration.salesforce.client-id");
-        String clientSecret = env.getRequiredProperty("spring.security.oauth2.client.registration.salesforce.client-secret");
-        String username = env.getRequiredProperty("spring.security.oauth2.client.registration.salesforce.username");
-        String password = env.getRequiredProperty("spring.security.oauth2.client.registration.salesforce.password");
-        String forceDomain = env.getRequiredProperty("SF_DOMAIN");
+        String clientSecret = env.getProperty("spring.security.oauth2.client.registration.salesforce.client-secret");
+        String username = env.getProperty("spring.security.oauth2.client.registration.salesforce.username");
+        String password = env.getProperty("spring.security.oauth2.client.registration.salesforce.password");
+        String forceDomain = env.getProperty("SF_DOMAIN");
 
         log.info("Client ID: {}, Client Secret: {}", clientId, clientSecret);
         log.info("Username: {}, Password: {}", username, password);
