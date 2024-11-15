@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.hemendra</groupId>
     <artifactId>sf-integration</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>sf-integration</name>
     <description>sf-integration</description>
     <url/>

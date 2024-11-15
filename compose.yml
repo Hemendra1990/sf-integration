@@ -1,0 +1,15 @@
+name: salesforce-integration
+services:
+  sf-int:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    container_name: sf-int
+    environment:
+      SERVER_PORT: 7011
+      USERNAME: user-81zl@salesforce.com
+      PASSWORD: BAPIsabya@1232W21KGpOE9FUW3CzZwd6O5Xj
+      CLIENT_ID: 3MVG929eOx29turELGtpTEdcTAF5oOTHa580YlXuN3nUeAmVKbM4Odlf.wI.uCeRcMjLhkXTdL5fLA4E.Z10o
+      CLIENT_SECRET: AF90CF614C84519FE152D5AA2152CD30FBC9410361C2ADD03B967982507A8CB2
+    ports:
+      - "7011:7011"
