@@ -1,4 +1,19 @@
 package com.hemendra.sfintegration.service;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.Map;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
 public class QuoteGenerationService {
+    private final SalesforceService salesforceService;
+
+    public void generateQuote(String recordId) {
+        Map record = salesforceService.getRecord(recordId);
+        log.info("{}", record);
+    }
 }
