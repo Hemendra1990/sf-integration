@@ -12,8 +12,9 @@ import java.util.Map;
 public class QuoteGenerationService {
     private final SalesforceService salesforceService;
 
-    public void generateQuote(String recordId) {
+    public Map generateQuote(String recordId) {
         Map record = salesforceService.getRecord(recordId);
         log.info("{}", record);
+        return record;
     }
 }
