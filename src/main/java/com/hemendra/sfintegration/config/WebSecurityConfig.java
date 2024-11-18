@@ -14,7 +14,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authorizeRequests -> {
-            authorizeRequests.requestMatchers("/generate-quote").permitAll()
+            authorizeRequests.requestMatchers("/generate-quote/**").permitAll()
                     .anyRequest().authenticated();
         })
                 .oauth2Login(Customizer.withDefaults())
