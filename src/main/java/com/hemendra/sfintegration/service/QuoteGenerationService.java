@@ -17,4 +17,9 @@ public class QuoteGenerationService {
         log.info("{}", record);
         return record;
     }
+
+    public Map generateQuote(String sObject, String recordId) {
+        Map record = salesforceService.getRecord(sObject, recordId);
+        return record;
+    }
 }

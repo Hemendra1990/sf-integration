@@ -34,6 +34,17 @@ public class SalesforceService {
         return response.block();
     }
 
+    public Map getRecord(String sObject, String recordId) {
+        Mono<Map> response = salesforceWebClient.get()
+                .uri(uriBuilder -> uriBuilder.path(resourcePath).build(sObject, recordId))
+                .retrieve().onStatus(HttpStatusCode::isError, errorResponse -> {
+                    logErrorBody(errorResponse);
+                    return Mono.error(new RuntimeException(String.format("Salesforce request on error status=%s, headers=%s",
+                            errorResponse.statusCode(), errorResponse.headers().asHttpHeaders())));
+                }).bodyToMono(Map.class);
+        return response.block();
+    }
+
     public String upsertResource(String resourceId, String jsonRequest) {
         Mono<String> response = salesforceWebClient
                 .patch()
